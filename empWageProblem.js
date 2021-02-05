@@ -1,10 +1,15 @@
 console.log("Welcome to Employee Wage Problem");
-//variable decleration
+
 
 const FULL_DAY_HOUR = 8;
+const PART_DAY_HOUR = 4;
 const WAGE_PER_HOUR = 20;
+const IS_PART_TIME = 0;
+const IS_FULL_TIME = 1;
+let finalWage;
 let empCheck;
 let empCheck1;
+
 
 
 // Checking Employee Status
@@ -21,10 +26,15 @@ else if (empCheck == 0) {
 function dailyWage()
 {
    empCheck1 = Math.floor(Math.random() * 10) % 2;
-   if(empCheck1==1)
+   if(empCheck1== IS_FULL_TIME)
    {
-        let dailyWage=FULL_DAY_HOUR*WAGE_PER_HOUR;
-        console.log("Daily wage of an employee is: "+dailyWage);
+        finalWage=FULL_DAY_HOUR*WAGE_PER_HOUR;
+        console.log("Daily wage of an full time employee is: "+finalWage);
+   }
+   else if(empCheck1== IS_PART_TIME)
+   {
+        finalWage=PART_DAY_HOUR*WAGE_PER_HOUR;
+        console.log("Daily wage of a part time employee is: "+finalWage);
    }
 }
 dailyWage();
