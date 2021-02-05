@@ -1,10 +1,9 @@
 console.log("Welcone to Employee Wage Problem");
-
-/* Checking for Employee status */
+/* Checking Employee Status */
 let empCheck = Math.floor(Math.random() * 10) % 2;
 if (empCheck == 1) {
-    console.log("Employee Present.");
+    console.log("Employee Present");
 }
 if (empCheck == 0) {
-    console.log("Employee  Absent");
+    console.log("Employee Absent");
 }
