@@ -13,9 +13,11 @@ const MAX_HOURS_IN_MONTH = 100;
 let workDays = 1;
 let totalWorkHours = 0;
 
-let finalWage;
+var finalWage=0;
 let empCheck;
-
+var totalWorkingDays = 0;
+var totalWorkingHours = 0;
+var empDailyWageArr = new Array();
 
 
 
@@ -35,18 +37,29 @@ function getFinalWage() {
             break;
     }
 }
-
+// Calculating wage for month
 function main() {
-    while (workDays <= NUM_OF_WORK_DAYS && totalWorkHours <= MAX_HOURS_IN_MONTH) {
-        workDays++;
+    while (totalWorkingDays <= NUM_OF_WORK_DAYS && totalWorkingHours <= MAX_HOURS_IN_MONTH) {
+        totalWorkingDays++;
         let empHrs = getFinalWage();
-        totalWorkHours += empHrs;
+        totalWorkingHours += empHrs;
+        empDailyWageArr.push(
+            {
+                dailyWage: calDailyWage(empHrs),
+                toString() {
+                    return "\n Daily Earned Wage is=> " + this.dailyWage
+                }
+            });
     }
-    finalWage = totalWorkHours * WAGE_PER_HOUR;
-    console.log("Total wage of month is : "+finalWage);
+    console.log("Total wage of month is : " + finalWage);
+    console.log(empDailyWageArr.toString());
+}
+// Calculating daily wage along with total wage
+function calDailyWage(empHrs) {
+    let dailyWage = empHrs * WAGE_PER_HOUR;
+    finalWage += dailyWage;
+    return dailyWage;
 }
 main();
-
-
 
 
