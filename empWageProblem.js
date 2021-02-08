@@ -35,14 +35,17 @@ function getFinalWage() {
             break;
     }
 }
-while (workDays <= NUM_OF_WORK_DAYS && totalWorkHours <= MAX_HOURS_IN_MONTH) {
-    workDays++;
-    let empHrs = getFinalWage();
-    totalWorkHours += empHrs;
-}
-finalWage = totalWorkHours * WAGE_PER_HOUR;
-console.log("Total wage of month is : "+finalWage);
 
+function main() {
+    while (workDays <= NUM_OF_WORK_DAYS && totalWorkHours <= MAX_HOURS_IN_MONTH) {
+        workDays++;
+        let empHrs = getFinalWage();
+        totalWorkHours += empHrs;
+    }
+    finalWage = totalWorkHours * WAGE_PER_HOUR;
+    console.log("Total wage of month is : "+finalWage);
+}
+main();
 
 
 
